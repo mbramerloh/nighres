@@ -11,11 +11,11 @@ import ants.utils
 
 # nighresjava and nighres functions
 import nighresjava
-from ..io import load_volume, save_volume
-from ..utils import _output_dir_4saving, _fname_4saving, \
+from nighres.io import load_volume, save_volume
+from nighres.utils import _output_dir_4saving, _fname_4saving, \
                     _check_topology_lut_dir
-from ..surface import probability_to_levelset
-from . import embedded_antspy_multi, apply_coordinate_mappings
+from nighres.surface import probability_to_levelset
+from nighres.registration import embedded_antspy_multi, apply_coordinate_mappings
 
 # convenience labels
 X=0
@@ -33,13 +33,13 @@ def focused_antspy(source_images, target_images, source_label=None, target_label
                     coarse_iterations=[40,40],
                     medium_iterations=[50,50], 
                     fine_iterations=[40,40],
-					scaling_factor=[8,8],
-					cost_function=['MutualInformation','MutualInformation'],
-					interpolation=['NearestNeighbor','NearestNeighbor'],
-					regularization=['High','High'],
-					convergence=[1e-6,1e-6],
-					mask_zero=False, smooth_mask=0.0,
-					ignore_affine=False, ignore_header=False,
+		    scaling_factor=[8,8],
+		    cost_function=['MutualInformation','MutualInformation'],
+		    interpolation=['NearestNeighbor','NearestNeighbor'],
+		    regularization=['High','High'],
+		    convergence=[1e-6,1e-6],
+		    mask_zero=False, smooth_mask=0.0,
+		    ignore_affine=False, ignore_header=False,
                     save_data=False, overwrite=False, output_dir=None,
                     file_name=None):
     """ Focused ANTSpy Registration
@@ -397,4 +397,3 @@ def focused_antspy(source_images, target_images, source_label=None, target_label
               'inverse': inverse_mapping_file}
 
         return output
-    
