@@ -11,11 +11,11 @@ import ants.utils
 
 # nighresjava and nighres functions
 import nighresjava
-from nighres.io import load_volume, save_volume
-from nighres.utils import _output_dir_4saving, _fname_4saving, \
+from ..io import load_volume, save_volume
+from ..utils import _output_dir_4saving, _fname_4saving, \
                     _check_topology_lut_dir
-from nighres.surface import probability_to_levelset
-from nighres.registration import embedded_antspy_multi, apply_coordinate_mappings
+from ..surface import probability_to_levelset
+from . import embedded_antspy_multi, apply_coordinate_mappings
 
 # convenience labels
 X=0
